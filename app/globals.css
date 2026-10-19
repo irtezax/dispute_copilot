@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #070b12;
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(46, 230, 168, 0.28);
+  color: #f8fafc;
+}
+
+/* Faint ledger-grid backdrop used on the hero and CTA bands. */
+.bg-ledger-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-position: center top;
+}
+
+.glow-signal {
+  background:
+    radial-gradient(60ch 30ch at 20% 0%, rgba(46, 230, 168, 0.14), transparent 70%),
+    radial-gradient(50ch 26ch at 85% 20%, rgba(59, 130, 246, 0.12), transparent 70%);
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3a57 transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #2a3a57;
+  border-radius: 9999px;
+  border: 2px solid #070b12;
+}
+
+@layer components {
+  .kicker {
+    @apply font-mono text-[11px] uppercase tracking-[0.22em] text-signal-dim;
+  }
+  .card {
+    @apply rounded-xl border border-ink-700/70 bg-ink-850/70;
+  }
+}
